@@ -1,0 +1,15 @@
+<apex:page controller="InstituteController">
+
+  <apex:form >
+      <apex:selectList size="1" onchange="ment()">
+          <apex:selectOptions value="{!SelectInstitute}"></apex:selectOptions>
+      </apex:selectList>
+      <apex:actionFunction action="{!getMentorList}" name="ment" reRender="oPanel" />
+      <apex:outputPanel id="oPanel">
+      <apex:repeat var="men" value="{!mentorList}" id="m">
+      {!men.Name}
+      </apex:repeat>
+      </apex:outputPanel>
+  </apex:form>
+
+</apex:page>

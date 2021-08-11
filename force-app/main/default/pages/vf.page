@@ -1,0 +1,13 @@
+<apex:page sidebar="false" controller="DependentClassabcd">
+	<apex:form >
+		Departments: <apex:selectList value="{!selDept}" multiselect="false" size="1">
+		<apex:actionSupport event="onchange" reRender="out"/>
+			<apex:selectOptions value="{!deptnames}">
+			</apex:selectOptions>
+		</apex:selectList> <br/>
+		Employees: <apex:selectList multiselect="false" id="out" size="1">
+			<apex:selectOptions value="{!empnames}">
+			</apex:selectOptions>
+		</apex:selectList>
+	</apex:form>
+</apex:page>
